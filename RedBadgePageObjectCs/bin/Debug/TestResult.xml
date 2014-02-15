@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\lcsa\Documents\Visual Studio 2013\Projects\RedBadgePageObjectCs\RedBadgePageObjectCs\bin\Debug\RedBadgePageObjectCs.dll" total="4" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-02-15" time="17:23:12">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5472" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="EPGBLONW0032" user="lcsa" user-domain="EPGBLONW0032" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\lcsa\Documents\Visual Studio 2013\Projects\RedBadgePageObjectCs\RedBadgePageObjectCs\bin\Debug\RedBadgePageObjectCs.dll" executed="True" result="Success" success="True" time="58.786" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="RedBadgePageObjectCs" executed="True" result="Success" success="True" time="58.762" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestLogin" executed="True" result="Success" success="True" time="58.758" asserts="0">
+            <results>
+              <test-case name="RedBadgePageObjectCs.TestLogin.shouldNotUserBeAbleToLoginIn" executed="True" result="Success" success="True" time="12.087" asserts="0" />
+              <test-case name="RedBadgePageObjectCs.TestLogin.shouldNotUserBeAbleToRegister" executed="True" result="Success" success="True" time="14.165" asserts="0" />
+              <test-case name="RedBadgePageObjectCs.TestLogin.shouldUserBeAbleToLoginIn" executed="True" result="Success" success="True" time="16.345" asserts="1" />
+              <test-case name="RedBadgePageObjectCs.TestLogin.shouldUserBeAbleToRegister" executed="True" result="Success" success="True" time="16.117" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
