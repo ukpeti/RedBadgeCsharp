@@ -23,9 +23,9 @@ namespace RedBadgePageObjectCs
         public static String badEmail = "ba..d@bad.bad";
         public static String username = "ukpeti" + DateTime.Now.ToString("yyyyMMddHHmmss");
         public static String goodRegEmail = DateTime.Now.ToString("yyyyMMddHHmmss") + "@ggg.hu";
-        
-        
-        
+        public List<IWebElement> listoflinks;
+        public IWebElement i;
+         
     // Random email and username for being able to test randomly
 
         [Test]
@@ -67,5 +67,52 @@ namespace RedBadgePageObjectCs
             var SuccessfulRegisterPage = registerPage.Register(username, badEmail, goodPassWord);
             Assert.IsTrue(SuccessfulRegisterPage != null);
         }
+        [Test]
+        public void shouldAllLinkLeadSomewhere()
+        {
+            IWebDriver driver = new FirefoxDriver();
+            driver.Navigate().GoToUrl("http://www.theguardian.com");
+            var mainPage = new MainEntryPage(driver);
+            listoflinks = mainPage.GetLinks (driver);
+            
+
+            for (int n = 0; n < listoflinks.Count; n++) {
+
+                Console.WriteLine(listoflinks[n].Text);
+                var beforeWindow = driver.CurrentWindowHandle;
+                
+                if (driver.FindElement(By.LinkText(listoflinks[n].Text)).Displayed && listoflinks[n].Text != "Sign in"){
+                    
+                    Console.WriteLine("Found link: " + listoflinks[n].Text);
+                    driver.FindElement(By.LinkText(listoflinks[n].Text)).SendKeys(Keys.Shift + Keys.Return);
+
+                    foreach (string handle in driver.WindowHandles)
+                    {
+                        if (handle != beforeWindow)
+                        {
+                            driver.SwitchTo().Window(handle);
+                            break;
+                        }
+                    }
+                    Console.WriteLine("UJ: " + driver.Url);
+                    driver.Close();
+                    driver.SwitchTo().Window(beforeWindow);
+                    Console.WriteLine("REGI: " + driver.Url);
+                }
+                else
+                {
+
+                    Console.WriteLine("NotFound link: " + listoflinks[n].Text);
+                }
+                    
+                //driver.Navigate().Back();
+            }
+            
+            
+            
+                            
+        }
+
+
     }
 }
