@@ -80,7 +80,6 @@ namespace RedBadgePageObjectCs
             TypePassword(password);
             TypePasswordAgain(password);
             AcceptTermsCheck();
-            
             return RegInButton();
         }
     }

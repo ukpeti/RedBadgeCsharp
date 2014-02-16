@@ -37,7 +37,15 @@ namespace RedBadgePageObjectCs
             get { return Wait.Until(d => Driver.FindElement(By.CssSelector("input.button"))); }
         }
 
-        public SuccessFulRegisterPage(IWebDriver driver) : base(driver) { }
+        private IWebElement ContinueButton
+        {
+            get { return Wait.Until(d => Driver.FindElement(By.CssSelector("a.button"))); }
+        }
+
+        public SuccessFulRegisterPage(IWebDriver driver) : base(driver) {
+
+             ContinueButton.Click();
+        }
 
         private void TypeUserName(String username)
         {

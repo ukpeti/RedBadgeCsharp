@@ -18,12 +18,15 @@ namespace RedBadgePageObjectCs
     public class TestLogin
     {
         
-        public static String goodEmail = "FILLIN";
-        public static String goodPassWord = "FILLIN";
+        public static String goodEmail = "diamantps@gmail.com";
+        public static String goodPassWord = "Kormi_78";
         public static String badEmail = "ba..d@bad.bad";
-        public static String username = "FILLIN";
-        public static String goodRegEmail = "FILLIN";
+        public static String username = "ukpeti" + DateTime.Now.ToString("yyyyMMddHHmmss");
+        public static String goodRegEmail = DateTime.Now.ToString("yyyyMMddHHmmss") + "@ggg.hu";
         
+        
+        
+    // Random email and username for being able to test randomly
 
         [Test]
         public void shouldUserBeAbleToLoginIn ()
